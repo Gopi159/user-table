@@ -1,0 +1,4 @@
+{
+    "environmentName": "test",
+    "mongoUrl": "mongodb://test"
+}

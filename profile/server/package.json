@@ -1,0 +1,18 @@
+{
+  "name": "my-users",
+  "version": "1.0.0",
+  "description": "My product API backend created by Gopi Jagan using NodeJS and MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "Gopi159",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.12",
+    "nodemon": "^2.0.7"
+  }
+}
