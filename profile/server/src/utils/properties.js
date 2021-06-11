@@ -8,5 +8,5 @@ module.exports = {
 
   ADD_USER_SUCCESS: "User added Successfully",
   USER_RETRIVAL_FAILED: "We are Unable to get users. Please try after sometime",
-  USER_NOT_FOUND: "No userss Found",
+  USER_NOT_FOUND: "No users Found",
 };
