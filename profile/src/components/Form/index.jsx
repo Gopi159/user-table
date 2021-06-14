@@ -19,6 +19,17 @@ function Form() {
       [name]: value,
     });
   };
+  const clickResetHandler = (e) => {
+    const { name, value } = e.target;
+
+    setValues({
+      ...values,
+      name: "",
+      email: "",
+      address: "",
+      phone: "",
+    });
+  };
   const clickHandler = () => {
     console.log(values);
     axios({
@@ -31,7 +42,6 @@ function Form() {
         address: values.address,
       },
     }).then((res) => {
-      setValues(userValues);
       axios.get("http://localhost:8000/api/getUsers").then((response) => {
         console.log(response.data.data);
 
@@ -57,6 +67,7 @@ function Form() {
         <input
           type="text"
           name="name"
+          value={values.name}
           placeholder="Enter Name"
           onChange={changeHandler}
         />
@@ -66,6 +77,7 @@ function Form() {
         <input
           type="email"
           name="email"
+          value={values.email}
           placeholder="Enter Email"
           onChange={changeHandler}
         />
@@ -75,6 +87,7 @@ function Form() {
         <input
           type="tel"
           name="phone"
+          value={values.phone}
           placeholder="Enter Phone Number"
           onChange={changeHandler}
         />
@@ -84,6 +97,7 @@ function Form() {
         <input
           type="text"
           name="address"
+          value={values.address}
           placeholder="Enter Address"
           onChange={changeHandler}
         />
@@ -91,6 +105,10 @@ function Form() {
         <br />
         <button type="submit" onClick={clickHandler}>
           Add User
+        </button>
+        <br />
+        <button type="reset" onClick={clickResetHandler}>
+          Reset
         </button>
         <br />
         <br />
