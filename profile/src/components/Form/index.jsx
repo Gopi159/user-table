@@ -21,7 +21,6 @@ function Form() {
   };
   const clickResetHandler = (e) => {
     const { name, value } = e.target;
-
     setValues({
       ...values,
       name: "",
@@ -31,7 +30,6 @@ function Form() {
     });
   };
   const clickHandler = () => {
-    console.log(values);
     axios({
       method: "post",
       url: "http://localhost:8000/api/addUser",
@@ -43,19 +41,13 @@ function Form() {
       },
     }).then((res) => {
       axios.get("http://localhost:8000/api/getUsers").then((response) => {
-        console.log(response.data.data);
-
         setRecords(response.data.data);
-        console.log(records, "use some of the strings");
       });
     });
   };
   useEffect(() => {
     axios.get("http://localhost:8000/api/getUsers").then((response) => {
-      console.log(response.data.data);
-
       setRecords(response.data.data);
-      console.log(records, "use some of the strings");
     });
   }, []);
 
